@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Valentine's Day ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .names {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .heart {
+            font-size: 2.5em;
+            animation: beat 1.5s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .image-box {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px dashed white;
+            border-radius: 15px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .image-box:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.03);
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: #ff4d6d;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #ffe3ea;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy Valentine's Day 💘</h1>
+        <div class="heart">❤️</div>
+
+        <!-- Name Personalization -->
+        <div class="names" id="nameText"></div>
+
+        <p id="loveLine">
+            You are my today and all of my tomorrows.
+        </p>
+
+        <button onclick="changeLoveLine()">Change Love Line 💕</button>
+    </header>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div> <img src="55.18 AM (5).jpeg" class="image-box">I told the stars about you </div>
+        <div> <img src="4 at 7.55.18 AM (2).jpeg"class="image-box">soul doesn't meet by accident</div>
+        <div> <img src="1.18 Am (3).jpeg"class="image-box">Be prepared cause i am gonna love forever</div>
+        <div> <img src="7.55.18 AM.jpeg"class="image-box">Hand in Hand you and me today,tomorrow,forever</div>
+        <div> <img src="AM (4).jpeg"class="image-box">and sudden all the love songs were all about you</div>
+        <div> <img src="at 7.55.18 AM (1).jpeg"class="image-box">world's change when eyes meet</div>
+        <div> <img src="WhatsApp (1).jpeg"class="image-box">thankyou for coming in my life I love you</div>
+        <div> <img src="WhatsApp.jpeg"class="image-box">my intention with you is from that's my girl to that's my wife is the move</div>
+   
+    </section>
+
+    <footer>
+        Made with ❤️ just for you
+    </footer>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="WhatsApp Audio.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Internal JavaScript -->
+    <script>
+        // 💑 Name Personalization
+        const yourName = "raghavendra s sheety";
+        const partnerName = "madhura D raghavendra shetty";
+
+        document.getElementById("nameText").innerText =
+            yourName + " ❤️ " + partnerName;
+
+        // 💌 Love Lines
+        const loveLines = [
+            "You are my today and all of my tomorrows.",
+            "Every love story is beautiful, but ours is my favorite.",
+            "I found my forever the day I found you.",
+            "You make my heart smile.",
+            "With you, every moment feels like Valentine's Day.",
+            "I love you more than words can ever say.",
+            "You are the reason I believe in love.",
+            "My favorite place is right next to you."
+        ];
+
+        function changeLoveLine() {
+            const randomIndex = Math.floor(Math.random() * loveLines.length);
+            document.getElementById("loveLine").innerText =
+                loveLines[randomIndex];
+        }
+
+        // 🎵 Play music after first interaction (browser safe)
+        document.body.addEventListener("click", () => {
+            document.getElementById("bgMusic").play();
+        }, { once: true });
+    </script>
+
+</body>
+</html>
